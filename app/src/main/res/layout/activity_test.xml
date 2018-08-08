@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainHomeActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/textview1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:hint="小功能入口就放这里"
+                tools:background="#FF00FF"
+                tools:text="string appender......小功能快测入口就放这里"
+                tools:visibility="visible"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/b001"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="活动详情"/>
+                    <Button
+                        android:id="@+id/b002"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="内容详情"/>
+                    <Button
+                        android:id="@+id/b003"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="我的评论"/>
+                    <Button
+                        android:id="@+id/b004"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="类目频道"/>
+                    <Button
+                        android:id="@+id/b005"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="待占"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/b0011"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="可结算明细"/>
+                    <Button
+                        android:id="@+id/b0012"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="店铺订单"/>
+                    <Button
+                        android:id="@+id/b0013"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="总销售额"/>
+                    <Button
+                        android:id="@+id/b0014"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="伙拼订单"/>
+                    <Button
+                        android:id="@+id/b0015"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="总收入"/>
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:layout_height="5dp"
+                      android:background="@color/red"/>
+                <Button
+                    android:id="@+id/ba11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:text="极客店铺"/>
+
+                <Button
+                    android:id="@+id/ba12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:text="零售店铺管理中心"/>
+
+                <Button
+                    android:id="@+id/ba13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:text="ba13-X5|DS"/>
+
+
+                <Button
+                    android:id="@+id/ba14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:text="ba14-设置手势密码"/>
+
+                <Button
+                    android:id="@+id/ba15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:text="ba15-校验手势密码"/>
+
+                <Button
+                    android:id="@+id/ba16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:text="ba16-我的评论"/>
+
+                <Button
+                    android:id="@+id/ba17"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:text="ba17_意见反馈"/>
+
+
+                <Button
+                    android:id="@+id/ba18"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:text="ba18-极客学院"/>
+
+                <Button
+                    android:id="@+id/ba19"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:text="ba19-拜师列表"/>
+                <Button
+                    android:id="@+id/ba20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:text="ba20- 拜师"/>
+                <Button
+                    android:id="@+id/ba21"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:text="ba21-极客学院V2"/>
+                <Button
+                    android:id="@+id/ba22"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:text="ba22-大咖讲堂"/>
+                <Button
+                    android:id="@+id/ba23"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:text="ba23-我的老师"/>
+                <Button
+                    android:id="@+id/ba24"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:text="ba24-我报名的课程"/>
+                <Button
+                    android:id="@+id/ba25"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:text="ba25-极客之家"/>
+                <Button
+                    android:id="@+id/ba26"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:text="ba26-qrCode"/>
+                <Button
+                    android:id="@+id/ba27"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:text="ba19-"/>
+                <Button
+                    android:id="@+id/ba28"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:text="ba28-火拼首页"/>
+                <View android:layout_width="match_parent" android:layout_height="5dp"
+                      android:background="@color/red"/>
+            </LinearLayout>
+            <Button
+                android:id="@+id/b11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="主页面"/>
+
+            <Button
+                android:id="@+id/b12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="选择服务器"/>
+
+            <Button
+                android:id="@+id/b13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="mvp示例@ioc可再封装"/>
+
+
+            <Button
+                android:id="@+id/b14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="视频播放示例"/>
+
+            <Button
+                android:id="@+id/b15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="15视频播放示例@h5"/>
+
+            <Button
+                android:id="@+id/b16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="16-retrolambda"/>
+
+            <Button
+                android:id="@+id/b17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="17"/>
+
+            <Button
+                android:id="@+id/b18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="18-推进器"/>
+
+            <Button
+                android:id="@+id/b19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="apiService"/>
+            <View android:layout_width="match_parent" android:layout_height="5dp"
+                  android:background="@color/gray"/>
+            <Button
+                android:id="@+id/b21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="推广赚"/>
+
+            <Button
+                android:id="@+id/b22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="卖也赚"/>
+
+            <Button
+                android:id="@+id/b23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="买也赚"/>
+
+
+            <Button
+                android:id="@+id/b24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="每日头条"/>
+
+            <Button
+                android:id="@+id/b25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="商城频道"/>
+
+            <Button
+                android:id="@+id/k4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="商品详情"/>
+            <Button
+                android:id="@+id/k5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="分享返金"/>
+
+            <Button
+                android:id="@+id/k7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="分享返币"/>
+
+            <Button
+                android:id="@+id/k6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="分享测试"/>
+
+            <Button
+                android:id="@+id/k8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="有间好店"/>
+
+            <Button
+                android:id="@+id/k9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="平台订单(买家订单)"/>
+            <Button
+                android:id="@+id/k10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="平台订单(卖家订单)"/>
+
+            <Button
+                android:id="@+id/b26"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="b26"/>
+
+            <Button
+                android:id="@+id/b27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="确认订单"/>
+            <Button
+                android:id="@+id/k2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="待支付订单详情"/>
+
+            <Button
+                android:id="@+id/k3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="收货地址"/>
+            <Button
+                android:id="@+id/k1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="地理定位"/>
+
+            <Button
+                android:id="@+id/b28"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="AR"/>
+
+            <Button
+                android:id="@+id/b29"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="商家店铺"/>
+            <View android:layout_width="match_parent" android:layout_height="5dp"
+                  android:background="@color/gray"/>
+            <Button
+                android:id="@+id/b31"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="31话题评论"/>
+
+            <Button
+                android:id="@+id/b32"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="32极客社交中心"/>
+
+            <Button
+                android:id="@+id/b33"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="33极客团队-（区县运营商）."/>
+
+
+            <Button
+                android:id="@+id/b34"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="webp-svg-tinypng-iSee图片-小炎-瞬目-淘宝-七彩色-zipgenius-betterJpeg-compress..."
+                android:textSize="11sp"/>
+
+            <Button
+                android:id="@+id/b35"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="素材中心"/>
+
+            <Button
+                android:id="@+id/b36"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="b36-tinker"/>
+
+            <Button
+                android:id="@+id/b37"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="inspect---view monitors"/>
+
+            <Button
+                android:id="@+id/b38"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="团队合作优化链"/>
+
+            <Button
+                android:id="@+id/b39"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="b39-动态追踪"/>
+            <View android:layout_width="match_parent" android:layout_height="5dp"
+                  android:background="@color/red_6c6d"/>
+            <TextView
+                android:id="@+id/textview2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="小功能入口就放这里"
+                tools:background="#FF00FF"
+                tools:text="string appender......小功能快测入口就放这里"
+                tools:visibility="visible"/>
+            <Button
+                android:id="@+id/b311"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="311区域化个性首页"/>
+
+            <Button
+                android:id="@+id/b322"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="322"/>
+
+            <Button
+                android:id="@+id/b333"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="333-Atlas-openAtlas"/>
+            <!--中级任务-->
+            <View android:layout_width="match_parent" android:layout_height="5dp"
+                  android:background="@color/red"/>
+            <Button
+                android:id="@+id/b40"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="41模块化 插桩"/>
+            <Button
+                android:id="@+id/b41"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="41登录"/>
+
+            <Button
+                android:id="@+id/b42"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="42群组"/>
+
+            <Button
+                android:id="@+id/b43"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="b43-商品收藏"/>
+
+
+            <Button
+                android:id="@+id/b44"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="44_绑定手机"/>
+
+            <Button
+                android:id="@+id/b45"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="评价"/>
+
+            <Button
+                android:id="@+id/b46"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="b46-我的钱包"/>
+
+            <Button
+                android:id="@+id/b47"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="红包地图"/>
+
+
+            <Button
+                android:id="@+id/b48"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="搜索"/>
+
+            <Button
+                android:id="@+id/b49"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="周边服务"/>
+
+            <Button
+                android:id="@+id/b400"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="基础信息"/>
+            <Button
+                android:id="@+id/b401"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="店铺信息发布"/>
+
+            <Button
+                android:id="@+id/b402"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="店铺信息列表"/>
+
+            <Button
+                android:id="@+id/b403"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="分类管理"/>
+
+
+            <Button
+                android:id="@+id/b404"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="长图加载"/>
+
+            <Button
+                android:id="@+id/b405"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="聊天测试"/>
+
+            <Button
+                android:id="@+id/b406"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="福利"/>
+
+            <Button
+                android:id="@+id/b407"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="发展伙伴"/>
+
+
+            <Button
+                android:id="@+id/b408"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="拼团详情"/>
+
+            <Button
+                android:id="@+id/b409"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="总收入明细"/>
+
+
+            <Button
+                android:id="@+id/b50"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="web测试..."
+            />
+
+
+            <View android:layout_width="match_parent" android:layout_height="5dp"
+                  android:background="@color/red_6c6d"/>
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
