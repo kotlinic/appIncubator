@@ -1,11 +1,14 @@
 package com.redcore.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.TextView;
+
+import com.redcore.ui.main.activity.MerchantCenterActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -209,6 +212,7 @@ public class MainHomeActivity extends AppCompatActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.b001:
+                startActivity(new Intent(this, MerchantCenterActivity.class));
                 break;
             case R.id.b002:
                 break;
