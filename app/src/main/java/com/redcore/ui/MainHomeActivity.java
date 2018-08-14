@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.redcore.ui.main.activity.MainFeedBackActivity;
 import com.redcore.ui.main.activity.MerchantCenterActivity;
 
 import butterknife.BindView;
@@ -215,6 +216,7 @@ public class MainHomeActivity extends AppCompatActivity {
                 startActivity(new Intent(this, MerchantCenterActivity.class));
                 break;
             case R.id.b002:
+                startActivity(new Intent(this, MainFeedBackActivity.class));
                 break;
             case R.id.b003:
                 break;
@@ -235,15 +237,5 @@ public class MainHomeActivity extends AppCompatActivity {
         }
     }
 
-    @OnClick(R.id.b001)
-    public void onMB001Clicked() {
-    }
 
-    @OnClick(R.id.b002)
-    public void onMB002Clicked() {
-    }
-
-    @OnClick(R.id.b003)
-    public void onMB003Clicked() {
-    }
 }

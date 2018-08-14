@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".main.activity.MerchantCenterActivity"/>
+        <activity android:name=".main.activity.MainFeedBackActivity"/>
     </application>
 
 </manifest>
