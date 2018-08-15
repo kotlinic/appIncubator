@@ -8,7 +8,11 @@ import com.redcore.ui.bean.TestBean;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DailyHeadlineCommonAdapter extends BaseQuickAdapter<TestBean, BaseViewHolder> {
+/**
+ * 待办列表
+ *
+ */
+public class HomeUpcomingAdapter extends BaseQuickAdapter<TestBean, BaseViewHolder> {
 
     public String getType() {
         return mType;
@@ -20,8 +24,8 @@ public class DailyHeadlineCommonAdapter extends BaseQuickAdapter<TestBean, BaseV
 
     private String mType;
 
-    public DailyHeadlineCommonAdapter() {
-        super(R.layout.item_home_news, getSampleData(3));
+    public HomeUpcomingAdapter() {
+        super(R.layout.item_home_upcoming, getSampleData(6));
     }
 
 
@@ -36,7 +40,7 @@ public class DailyHeadlineCommonAdapter extends BaseQuickAdapter<TestBean, BaseV
 //                .addOnClickListener(R.id.tweetName)
 //                .addOnLongClickListener(R.id.tweetText)
 //
-        helper.setText(R.id.time, item.getText() + " 2018-8-22");
+        helper.setText(R.id.time, item.getText() + "下午 18:36");
 
     }
 
@@ -44,7 +48,7 @@ public class DailyHeadlineCommonAdapter extends BaseQuickAdapter<TestBean, BaseV
         List<TestBean> list = new ArrayList<>();
         for (int i = 0; i < lenth; i++) {
             TestBean status = new TestBean();
-            status.setText("哦 " + i);
+            status.setText(" " );
             list.add(status);
         }
         return list;

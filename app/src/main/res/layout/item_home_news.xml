@@ -6,40 +6,43 @@
 
     <RelativeLayout android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp">
+                    android:paddingTop="10dp">
         <ImageView
             android:id="@+id/imageViewGood"
             android:layout_width="100dp"
-            android:layout_height="60dp"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:scaleType="fitXY"
-            android:layout_alignParentLeft="true"
             android:src="@drawable/home_normal"/>
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/imageViewGood"
             android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/imageViewGood"
             android:gravity="left"
-            android:textSize="16sp"
-            android:text="核心科技涉权斗？习近平罕见讲科技领导组组长让给李克强！"/>
+            android:text="核心科技涉权斗？习近平罕见讲科技领导组组长让给李克强！"
+            android:textColor="#303030"
+            android:textSize="16sp"/>
         <TextView
             android:id="@+id/time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/title"
-            android:layout_toRightOf="@+id/imageViewGood"
             android:layout_marginLeft="10dp"
-            android:textColor="@color/red"
-            android:text="2017-1-22"/>
+            android:layout_toRightOf="@+id/imageViewGood"
+            android:text="2017-1-22"
+            android:textColor="#aaaaaa"/>
     </RelativeLayout>
     <View android:layout_width="match_parent"
-          android:layout_height="5dp"
-          android:background="@color/red" android:visibility="gone"/>
+          android:layout_height="1dp"
+          android:layout_marginLeft="10dp"
+          android:layout_marginRight="10dp"
+          android:background="#aaaaaa" android:visibility="gone"/>
 
 </LinearLayout>

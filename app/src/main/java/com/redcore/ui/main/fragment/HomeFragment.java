@@ -3,9 +3,10 @@ package com.redcore.ui.main.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +19,6 @@ import com.redcore.ui.MainHomeActivity;
 import com.redcore.ui.R;
 import com.redcore.ui.bean.GlideImageLoader;
 import com.redcore.ui.main.adapter.CommonAppSectionAdapter;
-import com.redcore.ui.main.adapter.DailyHeadlineCommonAdapter;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 
@@ -33,13 +33,8 @@ import butterknife.ButterKnife;
 public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
     @BindView(R.id.recyclerViewApps)
     RecyclerView mRecyclerViewApps;
-    @BindView(R.id.recyclerViewNews)
-    RecyclerView mRecyclerViewNews;
-    @BindView(R.id.recyclerViewUpcoming)
-    RecyclerView mRecyclerViewUpcoming;
     @BindView(R.id.banner)
     Banner mBanner;
-    private DailyHeadlineCommonAdapter mDailyHeadlineCommonAdapter;
     private CommonAppSectionAdapter mCommonAppAdapter;
     private String mType;
 
@@ -53,8 +48,6 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
         ButterKnife.bind(this, rootView);
 
         initView();
-
-
         return rootView;
     }
 
@@ -72,39 +65,21 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
         mRecyclerViewApps.addOnItemTouchListener(new OnItemClickListener() {
             @Override
             public void onSimpleItemClick(BaseQuickAdapter adapter, View view, int position) {
-                Toast.makeText(HomeFragment.this.getActivity(), "每日头条详情H5" + position, Toast.LENGTH_SHORT).show();
+                Toast.makeText(HomeFragment.this.getActivity(), "每日头条详情" + position, Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(HomeFragment.this.getActivity(), MainHomeActivity.class));
             }
         });
         mRecyclerViewApps.setHasFixedSize(true);
         mRecyclerViewApps.setNestedScrollingEnabled(false);
-        //红芯要闻
-        mRecyclerViewNews.setLayoutManager(new LinearLayoutManager(this.getActivity()));
-        mDailyHeadlineCommonAdapter = new DailyHeadlineCommonAdapter();
-        mDailyHeadlineCommonAdapter.setType(mType);
-//        mRecyclerViewNews.addItemDecoration(new ItemTouchHelper());
-        mRecyclerViewNews.setAdapter(mDailyHeadlineCommonAdapter);
-        mRecyclerViewNews.addOnItemTouchListener(new OnItemClickListener() {
-            @Override
-            public void onSimpleItemClick(BaseQuickAdapter adapter, View view, int position) {
-                Toast.makeText(HomeFragment.this.getActivity(), "每日头条 红芯要闻" + position, Toast.LENGTH_SHORT).show();
-            }
-        });
-        mRecyclerViewNews.setHasFixedSize(true);
-        mRecyclerViewNews.setNestedScrollingEnabled(false);
-//
-        mRecyclerViewUpcoming.setLayoutManager(new LinearLayoutManager(this.getActivity()));
-        mDailyHeadlineCommonAdapter = new DailyHeadlineCommonAdapter();
-        mDailyHeadlineCommonAdapter.setType(mType);
-        mRecyclerViewUpcoming.setAdapter(mDailyHeadlineCommonAdapter);
-        mRecyclerViewUpcoming.addOnItemTouchListener(new OnItemClickListener() {
-            @Override
-            public void onSimpleItemClick(BaseQuickAdapter adapter, View view, int position) {
-                Toast.makeText(HomeFragment.this.getActivity(), "每日头条 红芯要闻" + position, Toast.LENGTH_SHORT).show();
-            }
-        });
-        mRecyclerViewUpcoming.setHasFixedSize(true);
-        mRecyclerViewUpcoming.setNestedScrollingEnabled(false);
+
+        initVisitorView();
+    }
+
+    private void initVisitorView() {
+        FragmentManager fragmentManager = getChildFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.add(R.id.fragment_container, new HomeVisitorFragment());
+        fragmentTransaction.commit();
     }
 
 

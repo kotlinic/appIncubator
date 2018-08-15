@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="5dp" android:orientation="vertical">
+
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/imageViewGood"
+            android:gravity="left"
+            android:maxEms="12"
+            android:maxLines="1"
+            android:text="核心科技涉权斗？习近平罕见讲科技领导组组长让给李克强！"
+            android:textSize="16sp"/>
+        <TextView
+            android:id="@+id/draftman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_marginLeft="10dp"
+            android:text="拟稿人：掌权担"
+            android:textColor="#aaaaaa"/>
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="10dp"
+            android:text="下午 18:36"
+            android:textColor="#aaaaaa"/>
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/draftman"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/time"
+            android:text="待审批"
+            android:textColor="#007aff"/>
+    </RelativeLayout>
+    <View android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:layout_marginLeft="10dp"
+          android:layout_marginRight="10dp"
+          android:background="#aaaaaa" android:visibility="visible"/>
+</LinearLayout>

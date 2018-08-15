@@ -5,8 +5,8 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="2dp"
-        android:layout_marginRight="2dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:layout_marginTop="10dp"
         android:background="@color/white"
         android:visibility="visible"
@@ -40,6 +40,7 @@
                     android:layout_marginLeft="10dp"
                     android:gravity="left|center_vertical"
                     android:text="红芯要闻"
+                    android:textColor="#303030"
                     android:textSize="18sp"
                     android:textStyle="bold"/>
             </LinearLayout>
@@ -67,8 +68,8 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="2dp"
-        android:layout_marginRight="2dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:layout_marginTop="10dp"
         android:background="@color/white"
         android:visibility="visible"
@@ -103,6 +104,7 @@
                     android:gravity="left|center_vertical"
                     android:text="待办列表"
                     android:textSize="18sp"
+                    android:textColor="#303030"
                     android:textStyle="bold"/>
             </LinearLayout>
 
