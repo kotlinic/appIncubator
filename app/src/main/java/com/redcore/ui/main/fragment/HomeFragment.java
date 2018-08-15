@@ -16,7 +16,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.redcore.ui.MainHomeActivity;
 import com.redcore.ui.R;
-import com.redcore.ui.main.adapter.CommonAppAdapter;
+import com.redcore.ui.main.adapter.CommonAppSectionAdapter;
 import com.redcore.ui.main.adapter.DailyHeadlineCommonAdapter;
 
 import butterknife.BindView;
@@ -32,7 +32,7 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
     @BindView(R.id.recyclerViewUpcoming)
     RecyclerView mRecyclerViewUpcoming;
     private DailyHeadlineCommonAdapter mDailyHeadlineCommonAdapter;
-    private CommonAppAdapter mCommonAppAdapter;
+    private CommonAppSectionAdapter mCommonAppAdapter;
     private String mType;
 
     @Override
@@ -52,7 +52,7 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
 
     private void initView() {
         mRecyclerViewApps.setLayoutManager(new GridLayoutManager(this.getActivity(), 4));
-        mCommonAppAdapter = new CommonAppAdapter();
+        mCommonAppAdapter = new CommonAppSectionAdapter(R.layout.item_home_common_app, R.layout.item_home_common_app_section_head, null);
         mRecyclerViewApps.setAdapter(mCommonAppAdapter);
         mRecyclerViewApps.addOnItemTouchListener(new OnItemClickListener() {
             @Override
@@ -61,6 +61,8 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                 startActivity(new Intent(HomeFragment.this.getActivity(), MainHomeActivity.class));
             }
         });
+        mRecyclerViewApps.setHasFixedSize(true);
+        mRecyclerViewApps.setNestedScrollingEnabled(false);
         //红芯要闻
         mRecyclerViewNews.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         mDailyHeadlineCommonAdapter = new DailyHeadlineCommonAdapter();

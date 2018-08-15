@@ -27,8 +27,10 @@
                 android:orientation="horizontal">
 
                 <View
-                    android:layout_width="8dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center"
+                    android:layout_height="20dp"
                     android:background="#2e43ff"/>
 
                 <TextView
@@ -87,8 +89,10 @@
                 android:orientation="horizontal">
 
                 <View
-                    android:layout_width="8dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center"
+                    android:layout_height="20dp"
                     android:background="#2e43ff"/>
 
                 <TextView
