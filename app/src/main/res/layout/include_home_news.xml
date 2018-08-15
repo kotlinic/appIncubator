@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content" android:orientation="vertical">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:visibility="visible"
+        app:cardCornerRadius="10dp"
+        app:contentPaddingLeft="5dp"
+        app:contentPaddingTop="5dp"
+        app:elevation="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="match_parent"
+                    android:background="#2e43ff"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="left|center_vertical"
+                    android:text="红芯要闻"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="blocksDescendants">
+                <!-- DEV NOTE: Outer wrapper relative layout is added intentionally to address issue
+                     that only happens on Marshmallow & Nougat devices (API 23 & 24).
+                     On marshmallow API 23, the "RecyclerView" `layout_height="wrap_content"` does NOT
+                     occupy the height of all the elements added to it via adapter. The result is cut out
+                     items that is outside of device viewport when it loads initially.
+                     Wrapping "RecyclerView" with "RelativeLayout" fixes the issue on Marshmallow devices.
+                -->
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerViewNews"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:visibility="visible"
+        app:cardCornerRadius="10dp"
+        app:contentPaddingLeft="5dp"
+        app:contentPaddingTop="5dp"
+        app:elevation="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="match_parent"
+                    android:background="#2e43ff"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="left|center_vertical"
+                    android:text="待办列表"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="blocksDescendants">
+                <!-- DEV NOTE: Outer wrapper relative layout is added intentionally to address issue
+                     that only happens on Marshmallow & Nougat devices (API 23 & 24).
+                     On marshmallow API 23, the "RecyclerView" `layout_height="wrap_content"` does NOT
+                     occupy the height of all the elements added to it via adapter. The result is cut out
+                     items that is outside of device viewport when it loads initially.
+                     Wrapping "RecyclerView" with "RelativeLayout" fixes the issue on Marshmallow devices.
+                -->
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerViewUpcoming"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>

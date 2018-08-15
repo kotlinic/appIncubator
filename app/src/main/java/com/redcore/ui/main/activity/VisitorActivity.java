@@ -9,7 +9,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.redcore.ui.R;
-import com.redcore.ui.main.fragment.DailyHeadlineFragment;
+import com.redcore.ui.main.fragment.HomeFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -31,11 +31,11 @@ public class VisitorActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_headline);
         ButterKnife.bind(this);
-        mTvHeaderCenter.setText("访客记录");
+        mTvHeaderCenter.setText("紅芯");
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 //        DailyHeadlineFragment shareEarnFragment = new DailyHeadlineFragment();
-        fragmentTransaction.add(R.id.fragment_container, new DailyHeadlineFragment());
+        fragmentTransaction.add(R.id.fragment_container, new HomeFragment());
         fragmentTransaction.commit();
     }
 

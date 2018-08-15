@@ -6,6 +6,8 @@
 
     <RelativeLayout android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
                     android:paddingTop="10dp"
@@ -23,23 +25,11 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/imageViewGood"
+            android:layout_below="@+id/imageViewGood"
             android:layout_marginLeft="10dp"
             android:gravity="left"
             android:textSize="16sp"
-            android:text="核心科技涉权斗？习近平罕见讲科技领导组组长让给李克强！"/>
-        <TextView
-            android:id="@+id/time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/title"
-            android:layout_toRightOf="@+id/imageViewGood"
-            android:layout_marginLeft="10dp"
-            android:textColor="@color/red"
-            android:text="2017-1-22"/>
+            android:text="查询事件"/>
     </RelativeLayout>
-    <View android:layout_width="match_parent"
-          android:layout_height="5dp"
-          android:background="@color/red" android:visibility="gone"/>
 
 </LinearLayout>

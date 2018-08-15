@@ -41,7 +41,7 @@ public class DailyHeadlineFragment extends Fragment implements BaseQuickAdapter.
         mDailyHeadlineCommonAdapter.setType(mType);
         mDailyHeadlineCommonAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_RIGHT);
         mDailyHeadlineCommonAdapter.setOnLoadMoreListener(this,mRecyclerView);
-//        mRecyclerView.addItemDecoration(new ItemTouchHelper());
+//        mRecyclerViewNews.addItemDecoration(new ItemTouchHelper());
         mRecyclerView.setAdapter(mDailyHeadlineCommonAdapter);
         mRecyclerView.addOnItemTouchListener(new OnItemClickListener() {
             @Override
