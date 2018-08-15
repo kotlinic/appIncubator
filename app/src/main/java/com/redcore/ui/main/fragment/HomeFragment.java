@@ -16,8 +16,14 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.redcore.ui.MainHomeActivity;
 import com.redcore.ui.R;
+import com.redcore.ui.bean.GlideImageLoader;
 import com.redcore.ui.main.adapter.CommonAppSectionAdapter;
 import com.redcore.ui.main.adapter.DailyHeadlineCommonAdapter;
+import com.youth.banner.Banner;
+import com.youth.banner.BannerConfig;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -31,6 +37,8 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
     RecyclerView mRecyclerViewNews;
     @BindView(R.id.recyclerViewUpcoming)
     RecyclerView mRecyclerViewUpcoming;
+    @BindView(R.id.banner)
+    Banner mBanner;
     private DailyHeadlineCommonAdapter mDailyHeadlineCommonAdapter;
     private CommonAppSectionAdapter mCommonAppAdapter;
     private String mType;
@@ -51,6 +59,13 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
     }
 
     private void initView() {
+        //设置图片加载器
+        List<String> images=new ArrayList<>();
+        images.add("http://img.zcool.cn/community/01700557a7f42f0000018c1bd6eb23.jpg");
+        images.add("http://img.zcool.cn/community/01b72057a7e0790000018c1bf4fce0.png");
+        images.add("http://img.zcool.cn/community/01ae5656e1427f6ac72531cb72bac5.jpg");
+        mBanner.setImageLoader(new GlideImageLoader()).setImages(images).isAutoPlay(true).setDelayTime(1500).setIndicatorGravity(BannerConfig.CENTER).start();
+
         mRecyclerViewApps.setLayoutManager(new GridLayoutManager(this.getActivity(), 4));
         mCommonAppAdapter = new CommonAppSectionAdapter(R.layout.item_home_common_app, R.layout.item_home_common_app_section_head, null);
         mRecyclerViewApps.setAdapter(mCommonAppAdapter);
