@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.redcore.ui.main.activity.MainFeedBackActivity;
 import com.redcore.ui.main.activity.MerchantCenterActivity;
+import com.redcore.ui.main.activity.VisitorActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -219,6 +220,7 @@ public class MainHomeActivity extends AppCompatActivity {
                 startActivity(new Intent(this, MainFeedBackActivity.class));
                 break;
             case R.id.b003:
+                startActivity(new Intent(this, VisitorActivity.class));
                 break;
             case R.id.b004:
                 break;
