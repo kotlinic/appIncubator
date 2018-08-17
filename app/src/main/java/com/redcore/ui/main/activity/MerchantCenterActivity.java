@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import com.redcore.ui.R;
+import com.redcore.ui.main.fragment.HomeFragmentV1;
 import com.redcore.ui.main.fragment.LeftFragment;
 
 import java.util.ArrayList;
@@ -30,6 +31,7 @@ public class MerchantCenterActivity extends FragmentActivity implements View.OnC
      * 底部四个按钮
      */
     private LinearLayout mTabBtnLeft;
+    private LinearLayout mTabBtnMiddle;
     private LinearLayout mTabBtnRight;
 
 
@@ -72,6 +74,10 @@ public class MerchantCenterActivity extends FragmentActivity implements View.OnC
                                 .setImageResource(R.drawable.home_selected);
                         break;
                     case 1:
+                        ((ImageButton) mTabBtnMiddle.findViewById(R.id.btn_tab_bottom_middle))
+                                .setImageResource(R.drawable.setting_selected);
+                        break;
+                    case 2:
                         ((ImageButton) mTabBtnRight.findViewById(R.id.btn_tab_bottom_right))
                                 .setImageResource(R.drawable.setting_selected);
                         break;
@@ -95,6 +101,8 @@ public class MerchantCenterActivity extends FragmentActivity implements View.OnC
     protected void resetTabBtn() {
         ((ImageButton) mTabBtnLeft.findViewById(R.id.btn_tab_bottom_left))
                 .setImageResource(R.drawable.home_normal);
+        ((ImageButton) mTabBtnMiddle.findViewById(R.id.btn_tab_bottom_middle))
+                .setImageResource(R.drawable.setting_normal);
         ((ImageButton) mTabBtnRight.findViewById(R.id.btn_tab_bottom_right))
                 .setImageResource(R.drawable.setting_normal);
     }
@@ -103,21 +111,27 @@ public class MerchantCenterActivity extends FragmentActivity implements View.OnC
 
         mTabBtnLeft = (LinearLayout) findViewById(R.id.id_tab_bottom_left);
         mTabBtnLeft.setOnClickListener(MerchantCenterActivity.this);
+        mTabBtnMiddle = (LinearLayout) findViewById(R.id.id_tab_bottom_middle);
+        mTabBtnMiddle.setOnClickListener(MerchantCenterActivity.this);
         mTabBtnRight = (LinearLayout) findViewById(R.id.id_tab_bottom_right);
         mTabBtnRight.setOnClickListener(MerchantCenterActivity.this);
 
-        LeftFragment tab01 = new LeftFragment();
+        HomeFragmentV1 tab01 = new HomeFragmentV1();
         LeftFragment tab02 = new LeftFragment();
+        LeftFragment tab03 = new LeftFragment();
         mFragments.add(tab01);
         mFragments.add(tab02);
+        mFragments.add(tab03);
     }
 
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.id_tab_bottom_left) {
             mViewPager.setCurrentItem(0);
-        } else if (view.getId() == R.id.id_tab_bottom_right) {
+        } else if (view.getId() == R.id.id_tab_bottom_middle) {
             mViewPager.setCurrentItem(1);
+        }else if (view.getId() == R.id.id_tab_bottom_right) {
+            mViewPager.setCurrentItem(2);
         }
     }
 }

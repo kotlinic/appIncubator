@@ -31,7 +31,28 @@
                 android:layout_height="wrap_content"
                 android:text="首页"/>
         </LinearLayout>
+        <LinearLayout
+            android:id="@+id/id_tab_bottom_middle"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:descendantFocusability="beforeDescendants"
+            android:gravity="center"
+            android:orientation="vertical">
 
+            <ImageButton
+                android:id="@+id/btn_tab_bottom_middle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#0000"
+                android:clickable="false"
+                android:src="@drawable/setting_normal"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="密码管家"/>
+        </LinearLayout>
         <LinearLayout
             android:id="@+id/id_tab_bottom_right"
             android:layout_width="0dp"
