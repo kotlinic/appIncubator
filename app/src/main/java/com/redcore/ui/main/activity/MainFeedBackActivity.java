@@ -177,8 +177,6 @@ public class MainFeedBackActivity extends AppCompatActivity {
         return "com.android.externalstorage.documents".equals(uri.getAuthority());
     }
 
-    
-
     /**
      * @param uri The Uri to check.
      * @return Whether the Uri authority is DownloadsProvider.
