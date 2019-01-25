@@ -223,6 +223,8 @@ public class MainHomeActivity extends AppCompatActivity {
                 startActivity(new Intent(this, VisitorActivity.class));
                 break;
             case R.id.b004:
+                //EventLog upload service
+
                 break;
             case R.id.b005:
                 break;
