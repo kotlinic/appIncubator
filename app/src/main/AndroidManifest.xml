@@ -23,6 +23,7 @@
         <activity android:name=".main.activity.MerchantCenterActivity"/>
         <activity android:name=".main.activity.MainFeedBackActivity"/>
         <activity android:name=".main.activity.VisitorActivity"/>
+        <activity android:name=".rx.RxZipMainActivity"/>
     </application>
 
 </manifest>
