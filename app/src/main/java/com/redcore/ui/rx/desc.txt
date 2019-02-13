@@ -5,3 +5,9 @@ https://blog.csdn.net/hhy113835/article/details/79008111  第二十三篇 Androi
 https://www.jianshu.com/p/05f85f2f74c1 Android中通过GPS或NetWork获取当前位置的经纬度
 
 https://github.com/ravi8x/RxJavaRetrofitNotesApp  AAAAAA   https://github.com/ravi8x/RxAndroidExamples
+subscribeOn()和observeOn()的区别
+subscribeOn()和observeOn()都是用来切换线程用的
+subscribeOn()改变调用它之前代码的线程
+observeOn()改变调用它之后代码的线程
+----
+rxjava  flatmap 与map 的区别
