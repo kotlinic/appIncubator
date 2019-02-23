@@ -5,8 +5,7 @@
     android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainHomeActivity">
+    android:layout_height="match_parent">
 
     <ScrollView
         android:id="@+id/scrollView"
@@ -39,12 +38,12 @@
                         android:id="@+id/b001"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="活动详情"/>
+                        android:text="main"/>
                     <Button
                         android:id="@+id/b002"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="内容详情"/>
+                        android:text="FeedBack"/>
                     <Button
                         android:id="@+id/b003"
                         android:layout_width="wrap_content"
@@ -54,7 +53,7 @@
                         android:id="@+id/b004"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="类目频道"/>
+                        android:text="Rx"/>
                     <Button
                         android:id="@+id/b005"
                         android:layout_width="wrap_content"
@@ -74,7 +73,7 @@
                         android:id="@+id/b0012"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="店铺订单"/>
+                        android:text="异步请求"/>
                     <Button
                         android:id="@+id/b0013"
                         android:layout_width="wrap_content"

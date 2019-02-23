@@ -1,0 +1,6 @@
+强制清除 gradle 依赖缓存
+Windows:
+gradlew build --refresh-dependencies
+
+Mac:
+./gradlew build --refresh-dependencies

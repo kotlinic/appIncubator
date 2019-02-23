@@ -5,9 +5,65 @@ https://blog.csdn.net/hhy113835/article/details/79008111  第二十三篇 Androi
 https://www.jianshu.com/p/05f85f2f74c1 Android中通过GPS或NetWork获取当前位置的经纬度
 
 https://github.com/ravi8x/RxJavaRetrofitNotesApp  AAAAAA   https://github.com/ravi8x/RxAndroidExamples
+------------------------------------
 subscribeOn()和observeOn()的区别
 subscribeOn()和observeOn()都是用来切换线程用的
 subscribeOn()改变调用它之前代码的线程
 observeOn()改变调用它之后代码的线程
-----
+
+标准案例
+Flowable.just(1,2,3).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<Integer>() {
+                    @Override
+                    public void accept(Integer r) throws Exception {
+                        Log.d("getClientIP", r + "");
+                    }
+                });
+
+ 获取本机ip 网络任务在map操作中才能受subscribeOn(Schedulers.io())异步线程控制，实现AsyncTask 原理类似
+
+https://segmentfault.com/a/1190000006142308  Rxjava快速使用手册——最简单的异步任务
+------------------------------------
+
+Observable  Observer
+RxJava 的观察者模式
+RxJava 有四个基本概念：Observable
+(可观察者，即被观察者)、 Observer
+(观察者)、 subscribe
+(订阅)、事件。Observable
+和 Observer
+通过 subscribe()方法实现订阅关系，从而 Observable可以在需要的时候发出事件来通知 Observer
+
+除了 Observer 接口之外，RxJava 还内置了一个实现了 Observer 的抽象类：Subscriber。 Subscriber 对 Observer 接口进行了一些扩展，但他们的基本使用方式是完全一样的：
+不仅基本使用方式一样，实质上，在 RxJava 的 subscribe 过程中，Observer 也总是会先被转换成一个 Subscriber 再使用。所以如果你只想使用基本功能，选择 Observer 和 Subscriber 是完全一样的。
+Subscriber是Observer的实现类
+public abstract class Subscriber<T> implements Observer<T>, Subscription
+------------------
+Observer与Subscriber的区别
+它们的区别对于使用者来说主要有两点：
+onStart(): 这是 Subscriber 增加的方法。它会在 subscribe 刚开始，而事件还未发送之前被调用，可以用于做一些准备工作，例如数据的清零或重置。这是一个可选方法，默认情况下它的实现为空。需要注意的是，如果对准备工作的线程有要求（例如弹出一个显示进度的对话框，这必须在主线程执行）， onStart() 就不适用了，因为它总是在 subscribe 所发生的线程被调用，而不能指定线程。要在指定的线程来做准备工作，可以使用 doOnSubscribe() 方法，具体可以在后面的文中看到。
+unsubscribe(): 这是 Subscriber 所实现的另一个接口 Subscription 的方法，用于取消订阅。在这个方法被调用后，Subscriber 将不再接收事件。一般在这个方法调用前，可以使用 isUnsubscribed() 先判断一下状态。 unsubscribe() 这个方法很重要，因为在 subscribe() 之后， Observable 会持有 Subscriber 的引用，这个引用如果不能及时被释放，将有内存泄露的风险。所以最好保持一个原则：要在不再使用的时候尽快在合适的地方（例如 onPause() onStop() 等方法中）调用 unsubscribe() 来解除引用关系，以避免内存泄露的发生。
+
+3) Subscribe (订阅)
+创建了 Observable 和 Observer 之后，再用 subscribe() 方法将它们联结起来，整条链子就可以工作了。代码形式很简单：
+
+observable.subscribe(observer);
+// 或者：
+observable.subscribe(subscriber);
+------------------------------------https://www.jianshu.com/p/698c9b5cce0d  Subject = Observable + Observer
+Subject  Observer 区别
+Observer与Subscriber的区别
+观察者模式（Subject-Observer）
+RxJava提供了四种不同的Subject：
+
+PublishSubject （发布）
+BehaviorSubject （行为/反应）
+ReplaySubject （重播）
+AsyncSubject （异步）
+
+------------------------------------
 rxjava  flatmap 与map 的区别
+
+------------------------------------
+

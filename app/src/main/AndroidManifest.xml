@@ -3,7 +3,7 @@
           package="com.redcore.ui">
 
     <!-- if you want to load images from the internet -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <!-- if you want to load images from a file OR from the internet -->
@@ -28,6 +28,8 @@
         <activity android:name=".main.activity.VisitorActivity"/>
         <activity android:name=".rx.RxZipMainActivity"/>
         <activity android:name=".rx.RxConActivity">
+        </activity>
+        <activity android:name=".rx.RxMainActivity">
         </activity>
     </application>
 
