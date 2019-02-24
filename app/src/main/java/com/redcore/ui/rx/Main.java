@@ -4,8 +4,11 @@ package com.redcore.ui.rx;
 import android.annotation.SuppressLint;
 import android.util.Log;
 
+import io.reactivex.Flowable;
 import io.reactivex.Observable;
-
+import io.reactivex.functions.BiFunction;
+import io.reactivex.schedulers.Schedulers;
+@SuppressLint("CheckResult")
 public class Main {
     static String TAG = "Main";
     @SuppressLint("CheckResult")
@@ -41,9 +44,32 @@ public class Main {
                     }
                 });*/
     }
+
     public static void main(String[] args) {
         test();
         Observable.fromCallable(() -> Log.d("",""));
+
+        Observable<Integer> odds = Observable.just(1, 3, 5).subscribeOn(Schedulers.io());
+        Observable<String> evens = Observable.just("2", "4", "6");
+        Observable.merge(odds, evens).subscribe(integer -> {
+            System.err.println(integer);
+        });
+        Observable.zip(odds, odds, new BiFunction<Integer, Integer, Object>() {
+            @Override
+            public Object apply(Integer integer, Integer integer2) throws Exception {
+                return null;
+            }
+        });
+        Flowable.zip(s -> {
+        }, s -> {
+        }, new BiFunction<Object, Object, Object>() {
+            @Override
+            public Object apply(Object o, Object o2) throws Exception {
+                return "";
+            }
+        });
+
+//        https://www.jianshu.com/p/2698a2d25364  Rxjava 利用zip实现并行请求串行处理结果  正解
     }
 
     @SuppressLint("CheckResult")

@@ -14,6 +14,7 @@ import org.reactivestreams.Publisher;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
 import butterknife.ButterKnife;
@@ -23,6 +24,7 @@ import io.reactivex.Flowable;
 import io.reactivex.FlowableOnSubscribe;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
+import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
@@ -172,6 +174,29 @@ public class MainHomeActivity extends AppCompatActivity {
 
                 break;
             case R.id.b0013:
+
+                Flowable.fromCallable(new Callable<String>() {
+                    @Override
+                    public String call() throws Exception {
+                        return null;
+                    }
+                });
+//                Observable.startFuture
+                Single.fromCallable(new Callable<String>() {
+                    @Override
+                    public String call() throws Exception {
+                        return null;
+                    }
+                });
+
+                /*Observable<Integer> observable = Async.startFuture(new Func0<Future<Integer>>() {
+                    @Override
+                    public Future<Integer> call() {
+                        //函数内为异步操作
+                        return future;
+                    }
+                });*/
+
                 break;
             case R.id.b0014:
                 break;

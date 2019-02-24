@@ -85,3 +85,4 @@ rxjava  flatmap 与map 的区别
     }
 ------------------------------------
 https://mcxiaoke.gitbooks.io/rxdocs/content/index.html   ReactiveX/RxJava文档中文版
+https://blog.51cto.com/flyfish225/2097371  日志抽取框架 flume 简介与安装配置
