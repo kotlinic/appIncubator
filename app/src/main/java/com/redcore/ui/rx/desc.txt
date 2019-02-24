@@ -20,6 +20,11 @@ Flowable.just(1,2,3).subscribeOn(Schedulers.io())
                         Log.d("getClientIP", r + "");
                     }
                 });
+第二种方式(2)
+return Flowable.create((FlowableOnSubscribe<String[]>) emitter -> {
+            emitter.onNext(getIpPortWithUrl(strUrl));
+        }, BackpressureStrategy.BUFFER);
+        onComplete 不写也能发送成功，emitter.onNext不写也可以
 
  获取本机ip 网络任务在map操作中才能受subscribeOn(Schedulers.io())异步线程控制，实现AsyncTask 原理类似
 
@@ -64,6 +69,19 @@ AsyncSubject （异步）
 
 ------------------------------------
 rxjava  flatmap 与map 的区别
+@CheckReturnValue
+    @BackpressureSupport(BackpressureKind.FULL)
+    @SchedulerSupport(SchedulerSupport.NONE)
+    public final <R> Flowable<R> flatMap(Function<? super T, ? extends Publisher<? extends R>> mapper) {
+        return flatMap(mapper, false, bufferSize(), bufferSize());
+    }
 
+@CheckReturnValue
+    @BackpressureSupport(BackpressureKind.PASS_THROUGH)
+    @SchedulerSupport(SchedulerSupport.NONE)
+    public final <R> Flowable<R> map(Function<? super T, ? extends R> mapper) {
+        ObjectHelper.requireNonNull(mapper, "mapper is null");
+        return RxJavaPlugins.onAssembly(new FlowableMap<T, R>(this, mapper));
+    }
 ------------------------------------
-
+https://mcxiaoke.gitbooks.io/rxdocs/content/index.html   ReactiveX/RxJava文档中文版

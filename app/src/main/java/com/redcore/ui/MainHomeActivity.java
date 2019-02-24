@@ -18,7 +18,9 @@ import java.util.concurrent.TimeUnit;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
+import io.reactivex.FlowableOnSubscribe;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -160,6 +162,14 @@ public class MainHomeActivity extends AppCompatActivity {
 
                             }
                         });
+
+//                ????
+                Flowable.create((FlowableOnSubscribe<String[]>) emitter -> {
+                            //getIpPortWithUrl(strUrl);
+                            //这里写执行耗时操作的逻辑
+//                            return new String[]{};
+                }, BackpressureStrategy.BUFFER);
+
                 break;
             case R.id.b0013:
                 break;
