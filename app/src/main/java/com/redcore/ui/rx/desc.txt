@@ -86,3 +86,7 @@ rxjava  flatmap 与map 的区别
 ------------------------------------
 https://mcxiaoke.gitbooks.io/rxdocs/content/index.html   ReactiveX/RxJava文档中文版
 https://blog.51cto.com/flyfish225/2097371  日志抽取框架 flume 简介与安装配置
+
+zip
+这篇博客只是为了帮助遇到 “ 我的zip为什么不能 并发 请求API ” 这个问题的Android开发者
+如果想zip能并发，每个子Observable都要.subscribeOn(Schedulers.io())，用不同线程来处理他们
