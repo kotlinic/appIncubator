@@ -21,6 +21,7 @@ import okhttp3.Response;
 public class RxDemo {
 
     static String TAG = "rx";
+
     public static Flowable<String> getClientIP() {
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder().url("https://api.ip.sb/ip").get().addHeader("cache-control", "no-cache").build();
@@ -38,7 +39,7 @@ public class RxDemo {
     @SuppressLint("CheckResult")
     public static void test() {
         Observable.just(1, 2, 9)
-        .subscribeOn(Schedulers.io())
+                .subscribeOn(Schedulers.io())
                 .subscribe(new Observer<Integer>() {
                     @Override
                     public void onSubscribe(Disposable d) {
@@ -64,7 +65,7 @@ public class RxDemo {
         Observable<Integer> odds = Observable.just(1, 3, 5).subscribeOn(io.reactivex.schedulers.Schedulers.io());
         Observable<Integer> evens = Observable.just(2, 4, 6);
         odds.subscribe(integer -> {
-            System.err.println(integer+" ---");
+            System.err.println(integer + " ---");
         });
         Observable.merge(odds, evens).subscribe(integer -> {
             System.err.println(integer);
