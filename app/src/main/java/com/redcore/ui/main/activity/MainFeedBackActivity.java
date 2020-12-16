@@ -28,18 +28,15 @@ public class MainFeedBackActivity extends AppCompatActivity {
         setContentView(R.layout.activity_test);
         Button btn = (Button) findViewById(R.id.b001);
         tv = (TextView) findViewById(R.id.textview1);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-                intent.setType("image/*");//选择图片
-                //intent.setType(“audio/*”); //选择音频
-                //intent.setType(“video/*”); //选择视频 （mp4 3gp 是android支持的视频格式）
-                //intent.setType(“video/*;image/*”);//同时选择视频和图片
+        btn.setOnClickListener(v -> {
+            Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+            intent.setType("image/*");//选择图片
+            //intent.setType(“audio/*”); //选择音频
+            //intent.setType(“video/*”); //选择视频 （mp4 3gp 是android支持的视频格式）
+            //intent.setType(“video/*;image/*”);//同时选择视频和图片
 //                intent.setType("*/*");//无类型限制
-                intent.addCategory(Intent.CATEGORY_OPENABLE);
-                startActivityForResult(intent, 1);
-            }
+            intent.addCategory(Intent.CATEGORY_OPENABLE);
+            startActivityForResult(intent, 1);
         });
     }
     String path;

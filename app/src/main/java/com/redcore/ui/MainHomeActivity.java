@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.redcore.ui.main.activity.MainFeedBackActivity;
 import com.redcore.ui.main.activity.MerchantCenterActivity;
@@ -234,6 +235,11 @@ public class MainHomeActivity extends AppCompatActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.b001:
+                mB002.setOnClickListener(
+                        view1 -> {
+                            view1.setVisibility(View.VISIBLE);
+                        }
+                );
                 startActivity(new Intent(this, MerchantCenterActivity.class));
                 break;
             case R.id.b002:
@@ -247,6 +253,12 @@ public class MainHomeActivity extends AppCompatActivity {
                 Observer observer=new Observer<Integer>() {
                     @Override
                     public void onSubscribe(Disposable d) {
+                        mB002.setOnClickListener(
+                                view1 -> {
+                                    view1.setVisibility(View.VISIBLE);
+                                }
+                        );
+                        Toast.makeText(MainHomeActivity.this, d+"222222", Toast.LENGTH_SHORT).show();
 
                     }
 
