@@ -10,6 +10,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.redcore.ui.main.activity.MainFeedBackActivity;
 import com.redcore.ui.main.activity.MerchantCenterActivity;
 import com.redcore.ui.main.activity.VisitorActivity;
@@ -399,6 +400,9 @@ public class MainHomeActivity extends AppCompatActivity {
 
                 break;
             case R.id.b0014:
+//                startActivity(new Intent(this, RxMainActivity.class));
+                // 1. 应用内简单的跳转(通过URL跳转在'进阶用法'中)
+                ARouter.getInstance().build("/test/activity").navigation();
                 break;
             case R.id.b0015:
                 mB50.setOnClickListener(

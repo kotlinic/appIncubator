@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".rx.RxMainActivity">
+
+    <Button
+        android:id="@+id/getUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="获取用户" />
+
+    <Button
+        android:id="@+id/removeUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/getUser"
+        android:text="移除用户" />
+
+    <Button
+        android:id="@+id/getArticle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/removeUser"
+        android:onClick="getArticle"
+        android:text="获取文章" />
+
+    <Button
+        android:id="@+id/removeArticle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/getArticle"
+        android:text="移除文章" />
+
+    <Button
+        android:id="@+id/permission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/getUser"
+        android:text="请求权限" />
+
+    <Button
+        android:id="@+id/retry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/getUser"
+        android:layout_toRightOf="@+id/permission"
+        android:text="重试" />
+
+    <Button
+        android:id="@+id/safe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/getArticle"
+        android:layout_toRightOf="@+id/retry"
+        android:text="铺获异常" />
+
+    <Button
+        android:id="@+id/asyn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/getArticle"
+        android:layout_toRightOf="@+id/safe"
+        android:text="异步" />
+
+    <Button
+        android:id="@+id/scheduled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/permission"
+        android:text="定时任务" />
+
+    <Button
+        android:id="@+id/cancelScheduled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/permission"
+        android:layout_toRightOf="@+id/scheduled"
+        android:text="取消定时" />
+
+    <Button
+        android:id="@+id/delay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/permission"
+        android:layout_toRightOf="@+id/cancelScheduled"
+        android:text="延迟任务" />
+
+    <Button
+        android:id="@+id/cancelDelay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/permission"
+        android:layout_toRightOf="@+id/delay"
+        android:text="取消延迟" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/delay"
+        android:text="登录" />
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/delay"
+        android:layout_toRightOf="@+id/login"
+        android:text="登出" />
+
+    <Button
+        android:id="@+id/singleClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/delay"
+        android:layout_toRightOf="@+id/logout"
+        android:text="防抖" />
+
+    <Button
+        android:id="@+id/singleClick1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/delay"
+        android:layout_toRightOf="@+id/singleClick"
+        android:text="不防抖" />
+
+    <Button
+        android:id="@+id/singleClick2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login"
+        android:text="防抖2" />
+
+    <Button
+        android:id="@+id/statistic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login"
+        android:layout_toRightOf="@+id/singleClick2"
+        android:text="统计" />
+
+    <Button
+        android:id="@+id/mainThread"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login"
+        android:layout_toRightOf="@+id/statistic"
+        android:text="主线程" />
+
+    <Button
+        android:id="@+id/intercept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login"
+        android:layout_toRightOf="@+id/mainThread"
+        android:text="拦截" />
+
+</RelativeLayout>
