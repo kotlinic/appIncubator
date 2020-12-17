@@ -238,6 +238,7 @@ public class MainHomeActivity extends AppCompatActivity {
                 mB002.setOnClickListener(
                         view1 -> {
                             view1.setVisibility(View.VISIBLE);
+                            Toast.makeText(MainHomeActivity.this, view1+"222222", Toast.LENGTH_SHORT).show();
                         }
                 );
                 startActivity(new Intent(this, MerchantCenterActivity.class));
