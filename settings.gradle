@@ -1,3 +1,4 @@
 rootProject.name='zmutils'
 include ':app', ':patterns'
 include ':kotapp'
+include ':kotlib'
