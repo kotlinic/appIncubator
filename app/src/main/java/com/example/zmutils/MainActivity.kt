@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     /**
@@ -42,8 +43,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(Intent(this@MainActivity, MainActivityOld::class.java))
             }
             R.id.removeUser -> {
+                removeUser.setText("Butterknife")
+                startActivity(Intent(this@MainActivity, ButterknifeActivity::class.java))
             }
             R.id.getArticle -> {
+                startActivity(Intent(this@MainActivity, ButterknifeKotActivity::class.java))
             }
             else -> {
             }
