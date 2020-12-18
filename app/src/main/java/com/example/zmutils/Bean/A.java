@@ -28,4 +28,8 @@ public class A {
     public void setEmployees(AEmployees[] employees) {
         this.employees = employees;
     }
+
+    public static void main(String[] args) {
+        System.out.println(111);
+    }
 }
