@@ -1,11 +1,12 @@
 package com.plugin.zm.core;
 
-import android.app.Application;
 import android.content.ComponentCallbacks;
 import android.content.Context;
 import android.content.res.Configuration;
 
-public class MyApplication extends Application {
+import com.qihoo360.replugin.RePluginApplication;
+
+public class MyApplication extends RePluginApplication {
 
     public MyApplication() {
         super();
