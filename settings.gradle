@@ -1,0 +1,2 @@
+rootProject.name='repluginZM'
+include ':app'
