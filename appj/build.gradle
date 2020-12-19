@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 //apply plugin: 'blockcanaryex'
 android {
     compileSdkVersion 30
@@ -37,4 +39,14 @@ dependencies {
     releaseImplementation 'com.letv.sarrsdesktop:BlockCanaryExJRTNoOp:0.9.9.4'
     testImplementation 'com.letv.sarrsdesktop:BlockCanaryExJRTNoOp:0.9.9.4'
 
+    debugImplementation 'com.github.zhengcx:MethodTraceMan:1.0.7'
+    releaseImplementation 'com.github.zhengcx:MethodTraceMan:1.0.5-noop'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+apply plugin: "cn.cxzheng.asmtraceman"
+
+traceMan {
+    open = true //这里如果设置为false,则会关闭插桩
+    logTraceInfo = false //这里设置为true时可以在log日志里看到所有被插桩的类和方法
+    traceConfigFile = "${project.projectDir}/traceconfig.txt"
 }

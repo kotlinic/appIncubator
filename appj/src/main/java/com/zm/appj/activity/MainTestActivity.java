@@ -1,6 +1,8 @@
 package com.zm.appj.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -142,6 +144,7 @@ public class MainTestActivity extends AppCompatActivity implements View.OnClickL
         mIntercept.setOnClickListener(this);
     }
 
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -149,16 +152,20 @@ public class MainTestActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.getUser:
                 Toast.makeText(MainTestActivity.this, "getUser成功!!!", Toast.LENGTH_SHORT).show();
-//                try {
-//                    Thread.sleep(3000);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 break;
             case R.id.removeUser:
                 Toast.makeText(MainTestActivity.this, "getUser成功!!!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, MethodTraceManActivity.class));
                 break;
             case R.id.getArticle:
+
+                Toast.makeText(this, "已执行随机耗时方法", Toast.LENGTH_SHORT).show();
+                SystemClock.sleep(3000);
                 break;
             case R.id.removeArticle:
                 break;
