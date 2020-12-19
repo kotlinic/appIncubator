@@ -1,0 +1,2 @@
+Currently BlockCanary directly calls getMainLooper().setMessageLogging() to do monitor,
+ which may conflicts with the original logging set by app, we can add a append mode for those situation.

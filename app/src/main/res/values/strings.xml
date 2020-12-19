@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">zmutils</string>
+    <string name="block_canary_display_activity_label">卡了</string>
 </resources>
