@@ -1,6 +1,5 @@
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.application'
 apply plugin: 'android-aspectjx'
-apply plugin: 'com.novoda.bintray-release'
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
@@ -8,18 +7,14 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
-    lintOptions {
-        abortOnError false
-    }
     defaultConfig {
+        applicationId "com.zm.aopapp"
         minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles 'consumer-rules.pro'
     }
 
     buildTypes {
@@ -35,20 +30,9 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-
-    api 'org.aspectj:aspectjrt:1.8.9'
-}
-
-publish{
-    repoName = 'maven'//远程仓库名字,不指明，默认是上传到maven
-    userOrg = 'superliu'//bintray.com的用户名
-    groupId = 'cn.com.superLei'//一个唯一值，默认包名,生成的gradle依赖前缀
-    artifactId = 'aop-runtime'//远程仓库包名称
-    publishVersion = '1.0.0'
-    desc = 'A very convenient aop library for Android'
-    website = 'https://github.com/AI'
-    licences = ['Apache-2.0']
+    implementation project(path: ':aop-runtime')
 }

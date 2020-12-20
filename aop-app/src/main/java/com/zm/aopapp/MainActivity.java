@@ -1,13 +1,17 @@
-package com.example.zmutils;
+package com.zm.aopapp;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
+import com.zm.aopruntime.annotation.SingleClick;
+import com.zm.aopruntime.logger.XLogger;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivityOld extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     /**
      * kotlinic
@@ -112,6 +116,7 @@ public class MainActivityOld extends AppCompatActivity implements View.OnClickLi
             default:
                 break;
             case R.id.getUser:
+                handleOnClick(v);
                 break;
             case R.id.removeUser:
                 startActivity(new Intent(this, MainActivity.class));
@@ -153,5 +158,14 @@ public class MainActivityOld extends AppCompatActivity implements View.OnClickLi
             case R.id.intercept:
                 break;
         }
+    }
+    @SingleClick
+//    @DebugLog(priority = Log.ERROR)
+//    @Intercept(3)
+    public void handleOnClick(View v) {
+        System.out.println("------------------点击响应------------");
+        XLogger.e("点击响应！");
+        Toast.makeText(MainActivity.this, v+"点击响应222222", Toast.LENGTH_SHORT).show();
+//        hello("xuexiangjys", "666666");
     }
 }
