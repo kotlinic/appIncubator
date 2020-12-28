@@ -22,7 +22,7 @@ class ItemDataEmpty {
     if (json["children"] != null) {
       children = [];
       json["children"].forEach((v) {
-        children.add(dynamic.fromJson(v));
+//        children.add(dynamic.fromJson(v));
       });
     }
     courseId = json["courseId"];
