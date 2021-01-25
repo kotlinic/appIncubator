@@ -1,0 +1,52 @@
+LeakCanary原理解析
+简介
+```
+LeakCanary是一款开源的内存泄漏检查工具，在项目中，可以使用它来检测Activity是否能够被GC及时回收。github的地址为https://github.com/square/leakcanary
+
+使用方式解析
+将LeakCanary引入AS，在Application中调用如下方法，可以跟踪Activity是否被GC回收。
+
+入口函数
+LeakCanary.install()方法的调用流程如下所示:
+
+install方法调用流程
+Install方法如下:
+
+install方法
+其中listenerServiceClass方法传入了展示分析结果的Service(DisplayLeakService);excludedRefs方法排除了开发中可以忽略的泄漏路径;buildAndInstall是主要的函数，
+实现了activity是否能被释放的监听。
+
+buildAndInstall
+buildAndInstall会调用ActivityRefWatcher.install来监测Activity。
+
+install
+最终调用了watchActivities():
+
+watchActivities
+通过registerActivityLifecycleCallbacks来监听Activity的生命周期:
+
+lifecycleCallbacks
+lifecycleCallbacks监听Activity的onDestroy方法，正常情况下activity在onDestroy后需要立即被回收，onActivityDestroyed方法最终会调用RefWatcher.watch方法:
+
+watch
+监测机制利用了Java的WeakReference和ReferenceQueue，通过将Activity包装到WeakReference中，被WeakReference包装过的Activity对象如果被回收，该WeakReference引
+用会被放到ReferenceQueue中，通过监测ReferenceQueue里面的内容就能检查到Activity是否能够被回收。检查方法如下:
+
+ensureGone
+1、  首先通过removeWeaklyReachablereference来移除已经被回收的Activity引用
+
+2、 通过gone(reference)判断当前弱引用对应的Activity是否已经被回收，如果已经回收说明activity能够被GC，直接返回即可。
+
+3、  如果Activity没有被回收，调用GcTigger.runGc方法运行GC，GC完成后在运行第1步，然后运行第2步判断Activity是否被回收了，如果这时候还没有被回收，
+那就说明Activity可能已经泄露。
+
+4、  如果Activity泄露了，就抓取内存dump文件(Debug.dumpHprofData)
+
+dumpHeap
+5、  之后通过HeapAnalyzerService.runAnalysis进行分析内存文件分析
+
+分析dump
+接着通过HeapAnalyzer(checkForLeak-findLeakingReference---findLeakTrace)来进行内存泄漏分析。
+
+6、  最后通过DisplayLeakService进行内存泄漏的展示。
+```
